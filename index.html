@@ -1,113 +1,83 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Dan Eisner — Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg1:#0f1724; --bg2:#0b1220;
-      --accent1:#06b6d4; --accent2:#7c3aed;
-    }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:'Poppins',sans-serif;background:linear-gradient(135deg,var(--bg1),var(--bg2));color:#e6eef8}
-    .container{max-width:1000px;margin:0 auto;padding:48px 20px}
-    .hero{display:flex;align-items:center;gap:28px;padding:48px;border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);box-shadow:0 10px 30px rgba(2,6,23,0.6)}
-    .avatar{width:110px;height:110px;border-radius:18px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--accent1),var(--accent2));font-size:40px;font-weight:700;animation:float 4s ease-in-out infinite}
-    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
-    .h1{font-size:34px;margin:0;background:linear-gradient(90deg,var(--accent1),#60a5fa);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .lead{color:#cbd5e1;margin-top:6px}
-    .badges{display:flex;gap:8px;margin-top:12px}
-    .badge{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);font-weight:600;font-size:13px;color:#c7d2fe}
-    .section{margin-top:36px;padding:28px;border-radius:12px;background:rgba(255,255,255,0.02);backdrop-filter:blur(6px);opacity:0;transform:translateY(12px);transition:all 500ms cubic-bezier(.2,.9,.2,1)}
-    .section.visible{opacity:1;transform:none}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px}
-    .card{padding:18px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);box-shadow:0 6px 18px rgba(2,6,23,0.5);transition:transform 220ms,box-shadow 220ms}
-    .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,0.6)}
-    .icon{width:44px;height:44px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;margin-bottom:8px;background:rgba(255,255,255,0.02)}
-    .footer{opacity:0.7;text-align:center;margin-top:28px;font-size:13px;color:#94a3b8}
-    @media (max-width:640px){.hero{flex-direction:column;text-align:center}.avatar{width:96px;height:96px;font-size:32px}.h1{font-size:28px}}
-    .links{display:flex;gap:10px;margin-top:12px}
-    .linkbtn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,rgba(255,255,255,0.03),transparent);text-decoration:none;color:inherit;border:1px solid rgba(255,255,255,0.03);font-weight:600}
-    .small{font-size:13px;color:#94a3b8}
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dan Eisner | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="container">
-    <header class="hero">
-      <div class="avatar">DE</div>
-      <div>
-        <h1 class="h1">Dan Eisner — student IT (Hardware & Sítě)</h1>
-        <p class="lead">18letý student na SPŠE Pardubice. C1 v angličtině. Chci studovat kyberbezpečnost na FIT ČVUT v Praze. Trading a seberozvoj jsou moje vášeň.</p>
-        <div class="badges">
-          <div class="badge">C1 Angličtina</div>
-          <div class="badge">Kyberbezpečnost</div>
-          <div class="badge">Trading</div>
-        </div>
-        <div class="links">
-          <a class="linkbtn" href="mailto:dan.eisner@example.com">✉️ Kontakt</a>
-          <a class="linkbtn" href="#">🐱 GitHub</a>
-        </div>
+  <div class="background"></div>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1 class="name">Dan Eisner</h1>
+      <h2 class="subtitle">Student IT | Hardware & Sítě | Kyberbezpečnost</h2>
+      <p class="intro">
+        Jsem 18letý student SPŠE Pardubice. Mám C1 z angličtiny a chci studovat
+        kyberbezpečnost na FIT ČVUT. Zajímám se o trading, technologie a seberozvoj.
+      </p>
+      <div class="buttons">
+        <a href="mailto:dan.eisner@example.com" class="btn primary">📧 Kontakt</a>
+        <a href="#" class="btn secondary">🐱 GitHub</a>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <section class="section" id="about">
-      <h2>O mě</h2>
-      <p class="small">Bydlím v Pardubicích a studuju SPŠE — Hardware a Sítě. Angličtina C1. Chci se věnovat kyberbezpečnosti. Ve volném čase fitness, seberozvoj a hraju League of Legends.</p>
-    </section>
+  <section class="about section">
+    <h2>O mně</h2>
+    <p>
+      Bydlím v Pardubicích, kde studuji obor <strong>Informační technologie – Hardware a Sítě</strong>.
+      Fascinuje mě oblast kyberbezpečnosti a chci se jí v budoucnu věnovat naplno.
+      Trading pro mě není jen koníček, ale i způsob myšlení – analýza, disciplína a strategie.
+      Kromě technologií se věnuji <strong>seberozvoji</strong>, mentálně i fyzicky. Pravidelně cvičím,
+      vzdělávám se a občas si pro zábavu zahraju <strong>League of Legends</strong>.
+    </p>
+  </section>
 
-    <section class="section" id="skills">
-      <h2>Skills & zájmy</h2>
-      <div class="grid">
-        <div class="card">
-          <div class="icon">🛡️</div>
-          <strong>Kyberbezpečnost</strong>
-          <p class="small">Základy sítí, etické hackingové myšlení, firewall & základní penetrační testování.</p>
-        </div>
-        <div class="card">
-          <div class="icon">💻</div>
-          <strong>Hardware & Sítě</strong>
-          <p class="small">Montáž PC, konfigurace routerů/switchů, troubleshooting.</p>
-        </div>
-        <div class="card">
-          <div class="icon">📈</div>
-          <strong>Trading</strong>
-          <p class="small">Analytika, disciplína, technická strategie (BTC/ETH).</p>
-        </div>
-        <div class="card">
-          <div class="icon">🏋️</div>
-          <strong>Fitness</strong>
-          <p class="small">Pravidelný trénink pro výkon a zdraví.</p>
-        </div>
+  <section class="skills section">
+    <h2>Co mě baví</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">🛡️</div>
+        <h3>Kyberbezpečnost</h3>
+        <p>Ochrana sítí, etický hacking, digitální bezpečí a obrana proti útokům.</p>
       </div>
-    </section>
+      <div class="card">
+        <div class="icon">💻</div>
+        <h3>Hardware & Sítě</h3>
+        <p>Stavba PC, konfigurace zařízení, diagnostika a správa sítí.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📈</div>
+        <h3>Trading</h3>
+        <p>Analýza grafů, strategie, řízení rizika a psychologická odolnost.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🏋️</div>
+        <h3>Fitness & Seberozvoj</h3>
+        <p>Vyvážený růst těla i mysli. Neustálý posun kupředu – každý den o krok dál.</p>
+      </div>
+    </div>
+  </section>
 
-    <section class="section" id="contact">
-      <h2>Kontakt</h2>
-      <p class="small">Email: <a href="mailto:dan.eisner@example.com">dan.eisner@example.com</a></p>
-    </section>
-
-    <div class="footer">© <span id="year"></span> Dan Eisner — vytvořeno rychle a hezky</div>
-  </div>
+  <footer class="footer">
+    © <span id="year"></span> Dan Eisner | Všechna práva vyhrazena
+  </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // reveal on scroll
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.15 });
-    document.querySelectorAll('.section').forEach(s => obs.observe(s));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
 
-    // small type-in lead
-    const lead = document.querySelector('.lead');
-    if(lead){
-      const text = lead.textContent;
-      lead.textContent = '';
-      let i = 0;
-      (function type(){ if(i<=text.length){ lead.textContent = text.slice(0,i++); setTimeout(type,8)} }());
-    }
+    document.querySelectorAll('.section, .card').forEach((el) => observer.observe(el));
   </script>
 </body>
 </html>
