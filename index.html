@@ -1,44 +1,106 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dan Eisner – Osobní web</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Dan Eisner</h1>
-    <p>Student SPŠE Pardubice | Informační technologie – Hardware a sítě</p>
-  </header>
+import { motion } from 'framer-motion';
+return (
+<div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white font-sans">
+{/* Hero section */}
+<section className="flex flex-col justify-center items-center text-center h-screen px-4">
+<motion.h1
+initial={{ opacity: 0, y: -40 }}
+animate={{ opacity: 1, y: 0 }}
+transition={{ duration: 1 }}
+className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
+>
+Dan Eisner
+</motion.h1>
+<motion.p
+initial={{ opacity: 0, y: 30 }}
+animate={{ opacity: 1, y: 0 }}
+transition={{ duration: 1, delay: 0.3 }}
+className="text-lg md:text-xl text-slate-300 max-w-2xl"
+>
+18letý student informačních technologií na SPŠE Pardubice — specializace Hardware a Sítě.
+C1 Angličtina, budoucí student FIT ČVUT (kyberbezpečnost) a trader s vášní pro seberozvoj.
+</motion.p>
+<motion.div
+initial={{ opacity: 0 }}
+animate={{ opacity: 1 }}
+transition={{ delay: 1 }}
+className="mt-10 flex gap-4"
+>
+<a href="mailto:dan.eisner@example.com" className="p-3 bg-slate-700 rounded-full hover:bg-slate-600 transition">
+<Mail className="w-5 h-5" />
+</a>
+<a href="https://github.com" className="p-3 bg-slate-700 rounded-full hover:bg-slate-600 transition">
+<Github className="w-5 h-5" />
+</a>
+</motion.div>
+</section>
 
-  <main>
-    <section id="about">
-      <h2>O mně</h2>
-      <p>Jsem 18ti letý student SPŠE Pardubice, obor Informační technologie se zaměřením na hardware a sítě. Mám certifikovanou úroveň angličtiny C1 a zajímám se o technologie, obchodování a osobní rozvoj.</p>
-    </section>
 
-    <section id="interests">
-      <h2>Zájmy</h2>
-      <ul>
-        <li>💹 Začínající trader – učím se obchodovat a chápat finanční trhy</li>
-        <li>🎮 Hráč League of Legends – strategie, týmová spolupráce a reflexy</li>
-        <li>💪 Osobní rozvoj – psychický i fyzický</li>
-        <li>🏋️‍♂️ Fitness – pravidelně chodím do posilovny</li>
-        <li>📚 Neustálé vzdělávání – sleduji knihy, podcasty a kurzy</li>
-      </ul>
-    </section>
+{/* About section */}
+<section className="max-w-4xl mx-auto py-20 px-6">
+<motion.h2
+initial={{ opacity: 0, y: 40 }}
+whileInView={{ opacity: 1, y: 0 }}
+transition={{ duration: 0.6 }}
+className="text-3xl font-bold mb-8 text-center"
+>
+O mně
+</motion.h2>
 
-    <section id="contact">
-      <h2>Kontakt</h2>
-      <p>Chceš se spojit? Napiš mi na: <a href="mailto:dan.eisner@email.cz">dan.eisner@email.cz</a></p>
-    </section>
-  </main>
 
-  <footer>
-    <p>&copy; 2025 Dan Eisner. Všechna práva vyhrazena.</p>
-  </footer>
-</body>
-</html>
+<motion.p
+initial={{ opacity: 0 }}
+whileInView={{ opacity: 1 }}
+transition={{ duration: 0.6 }}
+className="text-lg text-slate-300 leading-relaxed text-center"
+>
+Jsem student informačních technologií z Pardubic. Baví mě hardware, sítě a především kybernetická bezpečnost.
+Mým cílem je studovat na FIT ČVUT a posunout se směrem k etickému hackingu a digitální bezpečnosti.
+Kromě technologií mě zajímá trading a seberozvoj – psychický i fyzický. Rád trávím čas ve fitku a občas si zahraju League of Legends.
+</motion.p>
+</section>
+
+
+{/* Skills section */}
+<section className="bg-slate-800/40 py-20 px-6">
+<motion.h2
+initial={{ opacity: 0, y: 40 }}
+whileInView={{ opacity: 1, y: 0 }}
+transition={{ duration: 0.6 }}
+className="text-3xl font-bold mb-12 text-center"
+>
+Co mě baví a čemu se věnuju
+</motion.h2>
+
+
+<div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+{[
+{ icon: <Shield className="w-10 h-10 text-cyan-400" />, title: 'Kyberbezpečnost', text: 'Bezpečnost sítí, etický hacking a ochrana dat.' },
+{ icon: <Dumbbell className="w-10 h-10 text-green-400" />, title: 'Fitness a seberozvoj', text: 'Vyvážený rozvoj těla i mysli, disciplína a růst.' },
+{ icon: <Github className="w-10 h-10 text-indigo-400" />, title: 'Trading a IT projekty', text: 'Kombinace analytiky, disciplíny a technických dovedností.' },
+].map((card, i) => (
+<motion.div
+key={i}
+initial={{ opacity: 0, y: 40 }}
+whileInView={{ opacity: 1, y: 0 }}
+transition={{ duration: 0.6, delay: i * 0.2 }}
+className="bg-slate-900/60 p-8 rounded-2xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all text-center"
+>
+<div className="flex justify-center mb-4">{card.icon}</div>
+<h3 className="text-xl font-semibold mb-2">{card.title}</h3>
+<p className="text-slate-400">{card.text}</p>
+</motion.div>
+))}
+</div>
+</section>
+
+
+{/* Footer */}
+<footer className="text-center py-10 text-slate-500 text-sm">
+© {new Date().getFullYear()} Dan Eisner — All rights reserved.
+</footer>
+</div>
+);
+}
 
 
